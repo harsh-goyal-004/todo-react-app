@@ -21,13 +21,13 @@ A simple and interactive To-Do application built with React, designed to help us
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/react-todo-app.git
+   git clone https://github.com/harsh-goyal-004/todo-react-app.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd react-todo-app
+   cd todo-react-app
    ```
 
 3. Install dependencies:
