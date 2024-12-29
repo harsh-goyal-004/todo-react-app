@@ -13,6 +13,10 @@ function TodoProvider({ children }) {
 
   function deleteTask(id) {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+    // Clear localStorage when all tasks are deleted
+    if (todos.length === 1) {
+      localStorage.clear();
+    }
   }
 
   function completedTask(id) {

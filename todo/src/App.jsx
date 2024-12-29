@@ -4,8 +4,24 @@ import TodoProvider, { todoContext } from "./context/TodoProvider";
 import TaskContainer from "./components/TaskContainer";
 
 function App() {
-  const { todos } = useContext(todoContext);
+  const { todos, setTodos, deleteTask } = useContext(todoContext);
   const [status, setStatus] = useState("All");
+
+  // Save Tasks to LocalStorage
+  useEffect(() => {
+    if (todos.length > 0) {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+  }, [todos]);
+
+  useEffect(() => {
+    if (localStorage.length > 0) {
+      const localStorageTodos = JSON.parse(localStorage.getItem("todos"));
+      if (localStorageTodos) {
+        setTodos(localStorageTodos);
+      }
+    }
+  }, []);
 
   return (
     <>
